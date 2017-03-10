@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <meta charset="utf-8" />
+        <title>Demand Survey no. is anyone still counting?</title>
+        <style type="text/css">
+            body{margin:40px auto; max-width:650px; line-height:1.3; background-color:#444444; color:#eeeeee; padding:0 10px;}
+            header{ text-align:center; }
+            h1, h2, h3 { font-family: "Century Gothic", "Aktiv Grotesk", Sans-Serif; line-height:1.2; text-align:center;} 
+            input[type=checkbox] {transform: scale(1.5);}
+            #content{color:#222222; background-color:#eeeeee; border:5px solid #eeeeee;;}
+            #preamble{text-align:center; color:#eeeeee;}
+            #center{text-align:center;}
+            #hidden{display: none;}
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Demand survey for <em>4th</em> term</h1>
+            <aside>Pray that this is the last one</aside>
+        <h2>Select courses by checking the boxes next to them</h2>
+        <p>
+            <strong>Make sure you select 24-26 credits before clicking submit.</strong>
+        </p>
+        </header>
+        <div id="preamble">
+            <p>Name</p> 
+            <input id="name"    type="text" value="">  <br>
+            <p> Roll Number </p>
+            <input id="roll"    type="number" min="166000" max="167000"> <br><br>
+        </div>
+
+           <div id="content"> 
+            <h2> Marketing </h2>
+            <input id="course1" type="checkbox" onClick="course();"> Sales & Distribution Management [4 credits] <br>
+            <blockquote><button id="1" onclick="outline(this.id)"> Course Outline </button> Profs. K. Dasaratharaman & Govindrajan Srinivasan </blockquote> 
+            <input id="course2" type="checkbox" onClick="course();"> B2B Marketing [4 credits] <br> 
+            <blockquote><button id="2" onclick="outline(this.id)"> Course Outline </button> Prof DVR Seshadri </blockquote>
+            <input id="course3" type="checkbox" onClick="course();"> Brand Management [4 credits] <br> 
+            <blockquote><button id="3" onclick="outline(this.id)"> Course Outline </button> Profs. Charanpreet Singh & Govindrajan Srinvasan </blockquote>
+            <input id="course4" type="checkbox" onClick="course();">  Product Strategy and Management [4 credits] <br>
+            <blockquote><button id="4" onclick="outline(this.id)"> Course Outline </button> Prof. Ramesh Venkateswaran </blockquote>
+            <input id="course5" type="checkbox" onClick="course();"> Consumer Behaviour [4 credits] <br>
+            <blockquote><button id="5" onclick="outline(this.id)"> Course Outline </button> Prof. Prantosh Banerjee </blockquote><br>
+            
+            <h2> Finance & Accounting </h2>
+            <input id="course6" type="checkbox" onClick="course();"> Financial Statement Analysis [2 credits] <br>
+            <blockquote><button id="6" onclick="outline(this.id)"> Course Outline </button> Prof. Rajendra Patel </blockquote>
+            <input id="course7" type="checkbox" onClick="course();">  Global Securities Market [4 credits] <br>
+            <blockquote><button id="7" onclick="outline(this.id)"> Course Outline </button> Prof. Sunil Parameswaran </blockquote>
+            <input id="course8" type="checkbox" onClick="course();"> Banking Financial Management & Systems [4 credits] <br>
+            <blockquote><button id="8" onclick="outline(this.id)"> Course Outline </button> Prof. PC Narayan </blockquote>
+            <input id="course9" type="checkbox" onClick="course();"> Corporate Valuation [4 credits] <br> 
+            <blockquote><button id="9" onclick="outline(this.id)"> Course Outline </button> Prof. Shobhit Aggarwal </blockquote>
+            <input id="coursea" type="checkbox" onClick="course();"> Fixed Income Securities [4 credits] <br>
+            <blockquote><button id="a" onclick="outline(this.id)"> Course Outline </button> Prof. Sunil Parameswaran </blockquote><br>
+            
+            <h2> OB & HR </h2>
+            <div id="hidden"><input id="courseb" type="checkbox" onClick="course();"> Labour Relations [2 credits] <br>
+            <blockquote><button id="b" onclick="outline(this.id)"> Course Outline </button> Prof. Shantanu Sarkar </blockquote></div>
+            <input id="coursec" type="checkbox" onClick="course();"> Inspired Leadership through Personal Mastery [4 credits] <br>
+            <blockquote><button id="c" onclick="outline(this.id)"> Course Outline </button> Prof. Gokul Kamath, Prof. DVR Seshadri, Dr. Thimmapa Hegde </blockquote><br>
+            
+            <h2> Operations & Information Systems </h2>
+            <input id="coursed" type="checkbox" onClick="course();"> Operations Strategy [2 credits] <br>
+            <blockquote><button id="d" onclick="outline(this.id)"> Course Outline </button> Prof. Rahul Pandey </blockquote>
+            <input id="coursee" type="checkbox" onClick="course();"> SCM- Planning and Execution [4 credits] <br>
+            <blockquote><button id="e" onclick="outline(this.id)"> Course Outline </button> Prof Venkatesh V </blockquote>
+            <input id="coursef" type="checkbox" onClick="course();"> Predictive Analytics- 1 [4 credits] <br>
+            <blockquote><button id="f" onclick="outline(this.id)"> Course Outline </button> Prof. Debanjan Mitra and Guest Faculty </blockquote>
+            <div id="hidden"><input id="courseg" type="checkbox" onClick="course();"> Project Management [4 credits] <br>
+            <blockquote><button id="g" onclick="outline(this.id)"> Course Outline </button> Prof. Rajiv Misra </blockquote></div><br>
+            
+            <h2> Business Policy & Strategy </h2>
+            <input id="courseh" type="checkbox" onClick="course();"> Industry & Competitor Analysis [4 credits] <br>
+            <blockquote><button id="h" onclick="outline(this.id)"> Course Outline </button> Prof. Sai Prakash R. Iyer </blockquote>
+            <div id="hidden"><input id="coursei" type="checkbox" onClick="course();"> Entrepreneurship & New Venture Planning [4 credits] <br>
+            <blockquote><button id="i" onclick="outline(this.id)"> Course Outline </button> To be decided </blockquote></div>
+            <input id="coursej" type="checkbox" onClick="course();"> Strategy in Practice An execution oriented workshop (SIP) [2 credits] <br>
+            <blockquote><button id="j" onclick="outline(this.id)"> Course Outline </button> Prof Thomas Joseph </blockquote>
+            </div>
+        <div id="center">     
+            <br>
+            <button type="button" onclick="submit()"> Submit </button>
+            <p>No. credits selected  <strong id="test">0</strong></p>
+        </div>
+    <script>
+        function course(){
+            var credits = 0;
+            var string_of_power = ""
+            var var1 = document.getElementById("course1");
+            var var2 = document.getElementById("course2");
+            var var3 = document.getElementById("course3");
+            var var4 = document.getElementById("course4");
+            var var5 = document.getElementById("course5");
+            var var6 = document.getElementById("course6");
+            var var7 = document.getElementById("course7");
+            var var8 = document.getElementById("course8");
+            var var9 = document.getElementById("course9");
+            var vara = document.getElementById("coursea");
+            var varb = document.getElementById("courseb");
+            var varc = document.getElementById("coursec");
+            var vard = document.getElementById("coursed");
+            var vare = document.getElementById("coursee");
+            var varf = document.getElementById("coursef");
+            var varg = document.getElementById("courseg");
+            var varh = document.getElementById("courseh");
+            var vari = document.getElementById("coursei");
+            var varj = document.getElementById("coursej");
+            
+            if (var1.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (var2.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (var3.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (var4.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (var5.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (var6.checked) {
+                credits = credits + 2;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (var7.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (var8.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (var9.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (vara.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (varb.checked) {
+                credits = credits + 2;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (varc.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (vard.checked) {
+                credits = credits + 2;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (vare.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (varf.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (varg.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (varh.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (vari.checked) {
+                credits = credits + 4;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            if (varj.checked) {
+                credits = credits + 2;
+                string_of_power = string_of_power + "1";
+            } else {
+                string_of_power = string_of_power + "0";
+            }
+            string_of_power = string_of_power + credits;
+            //email = document.getElementById("email").value;
+            document.getElementById("test").innerHTML = credits;
+            return string_of_power;
+        }
+        function submit(){
+            var string = course();
+            credits = parseInt(string.substr(-2));
+            roll =  document.getElementById("roll").value;
+            name = document.getElementById("name").value;
+            if ( credits <= 26 && credits >= 24 ){
+                if ( roll > 166000 &&  roll < 167000 && name != ""){
+                    var link = "http://172.16.5.167:5000/user/" + roll + credits + string.substr(0,string.length-2) + name;
+                    window.open(link, "_self"); 
+                }
+                else {
+                     alert ("Please fill your name and roll no correctly");
+                }
+
+            }
+            else {
+                alert ("Select 24-26 credits before submitting!");
+            }
+        }
+        function outline(id){
+            var string = "http://172.16.5.167:5000/static/course" + id + ".pdf";
+            window.open(string);
+        }
+    </script>
+        </body>
+</html>
