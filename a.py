@@ -26,5 +26,9 @@ def user(string):
     file.close()
     return '<h1>Your preferences have been submitted %s!</h1>' % roll
 
+@app.route('/viewdata')
+def viewdata():
+    return os.popen("cat data.csv").read()
+
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True, threaded=True)
