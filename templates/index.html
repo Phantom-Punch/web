@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
         <meta charset="utf-8" />
-        <title>Demand Survey no. is anyone still counting?</title>
+        <title>Demand Survey for 4th term</title>
         <style type="text/css">
             body{margin:40px auto; max-width:650px; line-height:1.3; background-color:#444444; color:#eeeeee; padding:0 10px;}
             header{ text-align:center; }
@@ -19,7 +19,6 @@
     <body>
         <header>
             <h1>Demand survey for <em>4th</em> term</h1>
-            <aside>Pray that this is the last one</aside>
         <h2>Select courses by checking the boxes next to them</h2>
         <p>
             <strong>Make sure you select 24-26 credits before clicking submit.</strong>
@@ -37,7 +36,7 @@
             <input id="course1" type="checkbox" onClick="course();"> Sales & Distribution Management [4 credits] <br>
             <blockquote><button id="1" onclick="outline(this.id)"> Course Outline </button> Profs. K. Dasaratharaman & Govindrajan Srinivasan </blockquote> 
             <input id="course2" type="checkbox" onClick="course();"> B2B Marketing [4 credits] <br> 
-            <blockquote><button id="2" onclick="outline(this.id)"> Course Outline </button> Prof DVR Seshadri </blockquote>
+            <blockquote><button id="2" onclick="outline(this.id)"> Course Outline </button> Prof DVR Seshadri & Rajesh Pandith </blockquote>
             <input id="course3" type="checkbox" onClick="course();"> Brand Management [4 credits] <br> 
             <blockquote><button id="3" onclick="outline(this.id)"> Course Outline </button> Profs. Charanpreet Singh & Govindrajan Srinvasan </blockquote>
             <input id="course4" type="checkbox" onClick="course();">  Product Strategy and Management [4 credits] <br>
@@ -64,12 +63,12 @@
             <blockquote><button id="c" onclick="outline(this.id)"> Course Outline </button> Prof. Gokul Kamath, Prof. DVR Seshadri, Dr. Thimmapa Hegde </blockquote><br>
             
             <h2> Operations & Information Systems </h2>
-            <input id="coursed" type="checkbox" onClick="course();"> Operations Strategy [2 credits] <br>
+            <input id="coursed" type="checkbox" onClick="course();"> Operations Strategy [4 credits] <br>
             <blockquote><button id="d" onclick="outline(this.id)"> Course Outline </button> Prof. Rahul Pandey </blockquote>
             <input id="coursee" type="checkbox" onClick="course();"> SCM- Planning and Execution [4 credits] <br>
             <blockquote><button id="e" onclick="outline(this.id)"> Course Outline </button> Prof Venkatesh V </blockquote>
             <input id="coursef" type="checkbox" onClick="course();"> Predictive Analytics- 1 [4 credits] <br>
-            <blockquote><button id="f" onclick="outline(this.id)"> Course Outline </button> Prof. Debanjan Mitra and Guest Faculty </blockquote>
+            <blockquote><button id="f" onclick="outline(this.id)"> Course Outline </button> Prof. V Nagadevara </blockquote>
             <div id="hidden"><input id="courseg" type="checkbox" onClick="course();"> Project Management [4 credits] <br>
             <blockquote><button id="g" onclick="outline(this.id)"> Course Outline </button> Prof. Rajiv Misra </blockquote></div><br>
             
@@ -183,7 +182,7 @@
                 string_of_power = string_of_power + "0";
             }
             if (vard.checked) {
-                credits = credits + 2;
+                credits = credits + 4;
                 string_of_power = string_of_power + "1";
             } else {
                 string_of_power = string_of_power + "0";
@@ -236,7 +235,7 @@
             name = document.getElementById("name").value;
             if ( credits <= 26 && credits >= 24 ){
                 if ( roll > 166000 &&  roll < 167000 && name != ""){
-                    var link = "http://172.16.5.167:5000/user/" + roll + credits + string.substr(0,string.length-2) + name;
+                    var link = "user/" + roll + credits + string.substr(0,string.length-2) + name;
                     window.open(link, "_self"); 
                 }
                 else {
@@ -249,7 +248,7 @@
             }
         }
         function outline(id){
-            var string = "http://172.16.5.167:5000/static/course" + id + ".pdf";
+            var string = "static/course" + id + ".pdf";
             window.open(string);
         }
     </script>
